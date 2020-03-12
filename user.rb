@@ -7,15 +7,17 @@
 #     end       
 
 
-patient1 = {
-  'Name': 'Jack',
-  'Phone': '000000',
-  'Email': 'Jack@gmail.com'   #hash
-}
-patients = [patient1]      #this contact1 hash gets stored in an array 
+# patient1 = {
+#   'Name': 'Jack',
+#   'Phone': '000000',
+#   'Email': 'Jack@gmail.com'   #hash
+# }
+# patients = [patient1]      #this contact1 hash gets stored in an array 
 
 
-def make_patient()
+def make_patient
+ patients = {}
+
 print "Name: "
     name = gets.chomp
     print "Phone: "
@@ -27,11 +29,20 @@ print "Name: "
       'Phone': phone,
       'Email': email
     }
-    patient.push(patients)
-    
+   
+separator = ' '
+File.open("patients.txt","a+") do |f|  #flag
+
+    f.puts(patient)
+    f.puts(separator)
+   
+end
+
 end    
 
-make_patient
+p make_patient
+
+
 
 
 # patients.each do |key, value|   #access all patients
