@@ -29,18 +29,22 @@ print "Name: "
       'Phone': phone,
       'Email': email
     }
-   
+    
+end
+
+def printer(make_patient)
 separator = ' '
 File.open("patients.txt","a+") do |f|  #flag
 
-    f.puts(patient)
+    f.puts(make_patient)
     f.puts(separator)
    
 end
+end
+   
+ p printer(make_patient)
 
-end    
 
-p make_patient
 
 
 

@@ -8,3 +8,7 @@
  
 {:Name=>"Liam", :Phone=>"928374", :Email=>"liam.email"}
  
+{:Name=>"test", :Phone=>"test", :Email=>"test"}
+ 
+{:Name=>"another test", :Phone=>"another test", :Email=>"another test"}
+ 
