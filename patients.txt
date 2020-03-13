@@ -12,3 +12,5 @@
  
 {:Name=>"another test", :Phone=>"another test", :Email=>"another test"}
  
+{:Name=>"Georgia Zoi Leng", :Phone=>"0415357444", :Email=>"georgia.z.leng@gmail.com", :Travel=>"n"}
+ 

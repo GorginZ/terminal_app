@@ -1,10 +1,18 @@
 
-    puts "Welcome to bookMD"
-    puts "If you are experiencing a medical emergency call 000"
-    puts "1. Book Appointment"
-    puts "2. Manage appointments"
-    puts "if you need help type --help"
-    puts "  >"
+require 'tty-prompt'
+
+home_menu = TTY::Prompt.new
+home_menu.select("What do you need today?", %w(Book_appointment Manage_appointments))
+
+
+    
+    
+    # puts "Welcome to bookMD"
+    # puts "If you are experiencing a medical emergency call 000"
+    # puts "1. Book Appointment"
+    # puts "2. Manage appointments"
+    # puts "if you need help type --help"
+    # puts "  >"
 
 def menu_select
 
