@@ -2,15 +2,47 @@ require 'rubygems'
 require 'tty-prompt'
 require 'tty-reader'
 require 'tty-table'
+require 'tty-box'
+
+def drs
+    puts "availability for all doctors"
+
+
+    drs = TTY::Table.new header: ['Dr. Gregor','Dr. Helen Kouzmin','Dr Kooray','Dr. Sade Weatley','Dr. Patrick Chan'], rows: [['Monday', 'Monday','-----','-----','Monday',], ['Tuesday', 'Tuesday','Tuesday','Tuesday','Tuesday'], ['Wednesday', 'Wednesday','Wednesday','-----','Wednesday'],['Thursday', 'Thursday','Thursday','-----','Thursday'],['Friday', 'Friday','Friday','Friday','Friday']]
+drs.render(:ascii)
+
+end
+
+
 
 def booker
-    puts "availability for all doctors"
-    availability = TTY::Table.new ['Monday 16','Tuesday 17','Wednesday 18','Thursday 19','friday 20'], [['8.00am', '8.00am','--','--','8.00am',], ['8.30am', '8.30am','8.30am','8.30am','8.30am'], ['9.00am', '9.00pm','9.00am','9.00am','9.00am'],['9.30am', '9.30am','9.30am','9.30am','9.30am'],['10.00am', '10.00am','10.00am','10.00am','10.00am'],['10.30am', '10.30am','10.30am','10.30am','10.30am']]
-    #each new array entry is new row, first array is collumns
 
-availability.render(:ascii)
+    appointment = TTY::Prompt.new
+    system("clear")
 
-end   
+    box = TTY::Box.frame(width: 30, height: 10, align: :center) do
+        "info about docs"
+        
+      end
+     
+      print box
+
+      print drs
+
+      
+
+    welcome = appointment.select("welcome to bookMD") do |menu|
+        
+        menu.choice 'Monday'
+        menu.choice 'Tuesday'
+        menu.choice 'Wednesday'
+        menu.choice 'Thursday'
+        menu.choice 'Friday'
+    end
+   
+end
+
+  
 
 
 def start 
@@ -29,7 +61,11 @@ def start
 end   
 
 start
+confirm = TTY::Box.success("Booking confirmed")
 
+
+
+print confirm
 
 
 
